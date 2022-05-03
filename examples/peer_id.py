@@ -6,6 +6,8 @@ def main():
     print(keypair)
     public_key = keypair.public()
     print(public_key)
+    peer_id = libp2p.PeerId(public_key=public_key)
+    print(peer_id)
 
 
 if __name__ == "__main__":

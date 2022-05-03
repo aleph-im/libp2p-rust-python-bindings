@@ -1,7 +1,6 @@
 use libp2p::core::PublicKey;
 use pyo3::prelude::*;
 use libp2p::identity;
-use pyo3::py_run;
 
 #[pyclass(name="Keypair")]
 struct PyKeypair {
@@ -9,8 +8,9 @@ struct PyKeypair {
 }
 
 #[pyclass(name="PublicKey")]
-struct PyPublicKey {
-    public_key: PublicKey,
+#[derive(Clone)]
+pub struct PyPublicKey {
+    pub public_key: PublicKey,
 }
 
 #[pymethods]
