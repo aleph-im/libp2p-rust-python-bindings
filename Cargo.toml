@@ -9,5 +9,6 @@ name = "libp2p_rust_python_bindings"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.16.3", features = ["extension-module"] }
 libp2p = "0.44.0"
+pyo3 = { version = "0.16.3", features = ["extension-module"] }
+pyo3-asyncio = { version = "0.16", features = ["async-std-runtime"] }

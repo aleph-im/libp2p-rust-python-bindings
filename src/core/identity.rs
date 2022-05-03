@@ -3,8 +3,9 @@ use pyo3::prelude::*;
 use libp2p::identity;
 
 #[pyclass(name="Keypair")]
-struct PyKeypair {
-    keypair: identity::Keypair,
+#[derive(Clone)]
+pub struct PyKeypair {
+    pub keypair: identity::Keypair,
 }
 
 #[pyclass(name="PublicKey")]
